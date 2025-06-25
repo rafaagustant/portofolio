@@ -1,4 +1,3 @@
-import uiuxPlaceholder from '@/assets/uiux-placeholder.png';
 import tedxThumbnail from'@/assets/tedX.png';
 import becycleThumbnail from'@/assets/becycle.png';
 import NutrikidzThumbnail from'@/assets/nutrikidz.png';
