@@ -1,4 +1,4 @@
-import tedxThumbnail from'@/assets/tedX.png';
+import tedxThumbnail from'@/assets/tedx.png';
 import becycleThumbnail from'@/assets/becycle.png';
 import NutrikidzThumbnail from'@/assets/nutrikidz.png';
 
