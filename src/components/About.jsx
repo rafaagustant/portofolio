@@ -1,120 +1,61 @@
-import { motion } from 'framer-motion';
+import { Badge } from '@/components/ui/badge';
 
 const About = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
-    }
-  };
-
-  const skillVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
-    }
-  };
+  const skills = [
+    'Python', 'SQL', 'Power BI', 'Excel',
+    'Figma', 'HTML','CSS', 'Prototyping', 'User Research',
+    'Data Visualization', 'Statistical Analysis'
+  ];
 
   return (
-    <div className="container-max section-padding">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="text-center mb-12"
-        >
-          <motion.h2 
-            variants={itemVariants}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900"
-          >
-            About Me
-          </motion.h2>
-          <motion.div 
-            variants={itemVariants}
-            className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-500 mx-auto rounded-full"
-          />
-        </motion.div>
+    <section id="about" className="section-padding bg-gray-50">
+      <div className="container-max">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12 fade-in">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+              About Me
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-500 mx-auto rounded-full mb-6" />
+          </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="prose prose-lg md:prose-xl max-w-none text-gray-700 leading-relaxed"
-        >
-          <motion.p 
-            variants={itemVariants}
-            className="text-lg md:text-xl mb-6"
-          >
-            I'm an Informatics Engineering student at Universitas Padjadjaran with a passion for Data Analytics, UI/UX Design, and Web Development.
-          </motion.p>
-          
-          <motion.p 
-            variants={itemVariants}
-            className="text-lg md:text-xl mb-6"
-          >
-            I've worked as a UI/UX Designer at TEDxPadjadjaran, built structured data projects using Kimball Methodology, and served as a Teaching Assistant for Algorithm Analysis.
-          </motion.p>
-          
-          <motion.p 
-            variants={itemVariants}
-            className="text-lg md:text-xl"
-          >
-            I actively explore bootcamps, certifications, and build digital projects across disciplines, constantly seeking to expand my knowledge and skills in the ever-evolving tech landscape.
-          </motion.p>
-        </motion.div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 fade-in">
+              <p className="text-lg text-gray-600 leading-relaxed">
+                I'm a passionate student pursuing my degree in Informatics Engineering at Universitas Padjadjaran. 
+                My journey combines analytical thinking with creative problem-solving, focusing on data analytics 
+                and UI/UX design.
+              </p>
+              
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Currently, I'm gaining hands-on experience as a UI/UX Designer at TEDxPadjadjaran and as an 
+                Algorithm Teaching Assistant. I love transforming complex data into meaningful insights and 
+                creating user-centered digital experiences.
+              </p>
 
-        {/* Skills Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-6"
-        >
-          {[
-            { name: 'Data Analysis', icon: '📊' },
-            { name: 'UI/UX Design', icon: '🎨' },
-            { name: 'Web Development', icon: '💻' },
-            { name: 'SQL & Databases', icon: '🗄️' },
-            { name: 'Python', icon: '🐍' },
-            { name: 'Teaching', icon: '👨‍🏫' }
-          ].map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              variants={skillVariants}
-              whileHover={{ 
-                scale: 1.05,
-                transition: { duration: 0.2 }
-              }}
-              className="bg-gray-50 rounded-lg p-4 text-center card-hover"
-            >
-              <div className="text-2xl mb-2">{skill.icon}</div>
-              <h3 className="font-medium text-gray-900">{skill.name}</h3>
-            </motion.div>
-          ))}
-        </motion.div>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                When I'm not analyzing data or designing, you'll find me exploring new technologies, contributing to 
+                projects, or mentoring fellow students in algorithm design and problem-solving.
+              </p>
+            </div>
+
+            <div className="fade-in">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Skills & Technologies</h3>
+              <div className="flex flex-wrap gap-3">
+                {skills.map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="secondary"
+                    className="px-3 py-1 text-sm font-medium bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
