@@ -28,7 +28,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 px-6">
           {/* Logo */}
           <div className="font-bold text-x1 text-gray-900">
-            https://portfolio-rafaagustant.vercel.app/
+            Rafa Agustant
           </div>
 
           {/* Desktop Navigation */}
