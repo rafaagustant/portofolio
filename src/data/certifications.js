@@ -1,6 +1,15 @@
 export const certifications = [
+
   {
     id: 1,
+    title: "Data Analyst Advance",
+    issuer: "ITBOX Academy",
+    date: "2024",
+    description: "Comprehensive advanced data analyst certification covering statistical programming with R, data science foundations, and practical machine learning for analytics. Explored advanced data wrangling, predictive modeling, and data-driven storytelling through real-world business case studies. Developed skills in exploratory data analysis, supervised & unsupervised learning techniques, and building reproducible analytical workflows to support strategic decision-making.",
+    credentialUrl: "https://drive.google.com/file/d/1P36Yw5cBGWSaTeszI2yIQR39OXuhPJy4/view?usp=sharing"
+  },
+  {
+    id: 2,
     title: "Data Analyst Intermediate",
     issuer: "ITBOX Academy",
     date: "2024",
@@ -8,7 +17,7 @@ export const certifications = [
     credentialUrl: "https://itbox.id/certificate-verifier/13EEAD5D3-759D4170C2-12D361191/"
   },
   {
-    id: 2,
+    id: 3,
     title: "Dasar Visualisasi Data",
     issuer: "Dicoding",
     date: "2024",
@@ -16,7 +25,7 @@ export const certifications = [
     credentialUrl: "https://www.dicoding.com/certificates/98XWE9W59XM3"
   },
   {
-    id: 3,
+    id: 4,
     title: "Dasar Pemrograman Web",
     issuer: "Dicoding",
     date: "2024",

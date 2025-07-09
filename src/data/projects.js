@@ -1,4 +1,4 @@
-import tedxThumbnail from'@/assets/tedx.png';
+import tedxThumbnail from'@/assets/tedX.png';
 import becycleThumbnail from'@/assets/becycle.png';
 import NutrikidzThumbnail from'@/assets/nutrikidz.png';
 
@@ -53,22 +53,54 @@ export const projects = {
   college: [
     {
       id: 6,
-      title: "Land Cover Analysis using K-Means",
-      description: "This application implements K-Means Clustering for land cover image analysis. It is designed to visualize the clustering results of aerial images and evaluate them using the Silhouette Coefficient.",
-      technologies: ["Jupyter", "Streamlit"],
-      githubUrl: "https://github.com/nefritmahardika/land-cover-analysis-kmeans",
+      title: "Eksplorimba",
+      description: "Being a Graphic Designer and UI/UX Designer for Eksplorimba, an educational Augmented Reality game that invites children to explore Indonesia's unique flora and fauna in a fun and interactive way.",
+      technologies: ["Figma", "Mobile Interface Design","Game Development"],
+      githubUrl: "https://drive.google.com/drive/folders/1RZblpJsxgIuTiJLXfJ8ST4Y-fUOWNjy6",
       category: "College"
     },
     {
       id: 7,
-      title: "Image Neural Transfer",
-      description: "Comprehensive database design and management project involving normalization, query optimization, and database administrationproject that applies the principles of neural style transfer to blend the style of one image with the content of another. This technique leverages deep learning, particularly convolutional neural networks (CNNs), to create visually stunning artworks by combining the artistic style of one image (style image) with the content of another image (content image).",
-      technologies: ["Jupyter"],
-      githubUrl: "https://github.com/nefritmahardika/image-neural-transfer",
+      title: "Hanacaraka",
+      description: "Hanacaraka is an interactive web application that showcases stories written in Javanese script along with their translations. The application utilizes semantic data based on RDF and is built using Next.js, React, Tailwind CSS, and GSAP for animations.",
+      technologies: ["Next.js", "OWL"],
+      githubUrl: "https://github.com/rafaagustant/hanacaraka",
       category: "College"
     },
     {
       id: 8,
+      title: "Job Recommendation System",
+      description: "This is an Application for Job Recommendation Based on Field of Interest, GPA, and Preffered Work Environmet Using FIS & K-Means Clustering for Soft Computing Course",
+      technologies: ["AI", "Python"],
+      githubUrl: "https://github.com/rafaagustant/SoftComputing-Job-Recommendation-Using-FIS---Clustering",
+      category: "College"
+    },
+    {
+      id: 9,
+      title: "Stress Level Prediction Using Random Forest Algorithm",
+      description: "This application uses the Random Forest algorithm to predict stress levels based on user input and provides insight into mental well-being.",
+      technologies: ["AI", "Python", "Decision Support System"],
+      githubUrl: "https://github.com/rafaagustant/Stress-Level-Prediction-Using-Random-Forest-Classifier",
+      category: "College"
+    },
+    {
+      id: 10,
+      title: "Land Cover Analysis using K-Means",
+      description: "This application implements K-Means Clustering for land cover image analysis. It is designed to visualize the clustering results of aerial images and evaluate them using the Silhouette Coefficient.",
+      technologies: ["Jupyter", "Streamlit"],
+      githubUrl: "https://github.com/rafaagustant/land-cover-analysis-kmeans",
+      category: "College"
+    },
+    {
+      id: 11,
+      title: "Image Neural Transfer",
+      description: "Comprehensive database design and management project involving normalization, query optimization, and database administrationproject that applies the principles of neural style transfer to blend the style of one image with the content of another. This technique leverages deep learning, particularly convolutional neural networks (CNNs), to create visually stunning artworks by combining the artistic style of one image (style image) with the content of another image (content image).",
+      technologies: ["Jupyter"],
+      githubUrl: "https://github.com/rafaagustant/image-neural-transfer",
+      category: "College"
+    },
+    {
+      id: 12,
       title: "Kopi.in Website for Database System Course at Universitas Padjadjaran",
       description: "An e-commerce platform specializing in premium coffee beans source from Indonesia’s finest plantations.",
       technologies: ["PHP"],
