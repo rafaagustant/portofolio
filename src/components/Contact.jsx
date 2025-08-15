@@ -13,8 +13,8 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "rafa-agustant-973325303",
-      href: "https://www.linkedin.com/in/rafa-agustant-973325303",
+      value: "rafaagustant",
+      href: "www.linkedin.com/in/rafaagustant",
       color: "text-blue-600"
     },
     {

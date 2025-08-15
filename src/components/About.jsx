@@ -21,20 +21,22 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 fade-in">
               <p className="text-lg text-gray-600 leading-relaxed">
-                I'm a passionate student pursuing my degree in Informatics Engineering at Universitas Padjadjaran. 
-                My journey combines analytical thinking with creative problem-solving, focusing on data analytics 
-                and UI/UX design.
+                I am a seventh-semester Informatics Engineering student at Universitas Padjadjaran with a GPA of 3.53. 
+                My academic journey blends analytical thinking with creative problem-solving, with a particular focus on 
+                data analytics and UI/UX design.
               </p>
               
               <p className="text-lg text-gray-600 leading-relaxed">
-                Currently, I'm gaining hands-on experience as a UI/UX Designer at TEDxPadjadjaran and as an 
-                Algorithm Teaching Assistant. I love transforming complex data into meaningful insights and 
-                creating user-centered digital experiences.
+                My professional experience began as a Teaching Assistant for Algorithm Analysis at the Department of 
+                Computer Science, Universitas Padjadjaran. I later took on the role of UI/UX Designer for 
+                TEDxPadjadjaranUniversity, and most recently contributed as a UI/UX Designer for Universitas 
+                Padjadjaran. All three positions were freelance engagements that allowed me to work on diverse challenges 
+                while delivering impactful, user-focused solutions.
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                When I'm not analyzing data or designing, you'll find me exploring new technologies, contributing to 
-                projects, or mentoring fellow students in algorithm design and problem-solving.
+              When I'm not analyzing data or designing, you'll find me exploring new technologies, contributing 
+              to projects, or mentoring fellow students in algorithm design and problem-solving.
               </p>
             </div>
 

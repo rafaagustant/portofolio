@@ -10,11 +10,11 @@ const Projects = () => {
       <Card className="h-full border-0 shadow-md hover:shadow-lg transition-shadow duration-200">
         {/* Thumbnail Image */}
         {project.thumbnail && (
-          <div className="w-full h-48 bg-gray-100 rounded-t-lg overflow-hidden">
+          <div className="w-full aspect-[16/9] bg-gray-100 rounded-t-lg overflow-hidden">
             <img 
               src={project.thumbnail} 
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
           </div>
         )}

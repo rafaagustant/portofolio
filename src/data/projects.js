@@ -1,11 +1,22 @@
 import tedxThumbnail from'@/assets/tedx.png';
 import becycleThumbnail from'@/assets/becycle.png';
 import NutrikidzThumbnail from'@/assets/nutrikidz.png';
+import PrabuThumbnail from'@/assets/Prabu.png';
+
 
 export const projects = {
   uiuxDesign: [
     {
       id: 1,
+      title: "Prabu : Ngabolang di Unpad Website",
+      description: "Designed UI/UX for a mobile-first campus exploration app named : 'Prabu : Ngabolang di Unpad' serving 9,000+ prospective students, completing a 35-component design system, 30 frames, and prototypes with usability testing in just 5 days.",
+      technologies: ["Figma", "User Research", "Prototyping", "UI/UX Design"],
+      thumbnail: PrabuThumbnail,
+      figmaUrl: "https://www.figma.com/design/5JgIV7oKq2FTuMu5Wq5Y8v/UI-UX?node-id=12-24&t=EGUNiGFly47tMLqi-1",
+      category: "UI/UX Design"
+    },
+    {
+      id: 2,
       title: "TEDxPadjadjaran University Website",
       description: "Designed and prototyped 9 user-friendly web pages for TEDxPadjadjaran University by collaborating with cross-functional teams and applying user research insights.",
       technologies: ["Figma", "User Research", "Prototyping", "UI/UX Design"],
@@ -14,7 +25,7 @@ export const projects = {
       category: "UI/UX Design"
     },
     {
-      id: 2,
+      id: 3,
       title: "BeCycle Mobile App",
       description: "Designed and prototyped a user-friendly app for Software Project course in Universitas Padjadjaran",
       technologies: ["Figma", "User Research", "Prototyping", "UI/UX Design"],
@@ -23,7 +34,7 @@ export const projects = {
       category: "UI/UX Design"
     },
     {
-      id: 3,
+      id: 4,
       title: "Nutrikidz Web",
       description: "Designed and prototyped a user-friendly web for Software Development course in Universitas Padjadjaran",
       technologies: ["Figma", "User Research", "Prototyping", "UI/UX Design"],
@@ -34,7 +45,7 @@ export const projects = {
   ],
   dataAnalytics: [
     {
-      id: 4,
+      id: 5,
       title: "Adidas Data Warehouse",
       description: "Built a comprehensive data warehouse using Kimball Methodology for Adidas sales data analysis. Implemented ETL processes and created interactive dashboards for business intelligence.",
       technologies: ["SQL", "Power BI", "Data Modeling", "Visual Studio", "ETL"],
@@ -42,7 +53,7 @@ export const projects = {
       category: "Data Analytics"
     },
     {
-      id: 5,
+      id: 6,
       title: "Reporting Engineer Rakamin",
       description: "Developed automated reporting solutions and data pipelines for Rakamin Project Based Internship at Jubelio. Created comprehensive dashboards and KPI tracking systems.",
       technologies: ["SQL", "Excel"],
@@ -52,7 +63,7 @@ export const projects = {
   ],
   college: [
     {
-      id: 6,
+      id: 7,
       title: "Eksplorimba",
       description: "Being a Graphic Designer and UI/UX Designer for Eksplorimba, an educational Augmented Reality game that invites children to explore Indonesia's unique flora and fauna in a fun and interactive way.",
       technologies: ["Figma", "Mobile Interface Design","Game Development"],
@@ -60,7 +71,7 @@ export const projects = {
       category: "College"
     },
     {
-      id: 7,
+      id: 8,
       title: "Hanacaraka",
       description: "Hanacaraka is an interactive web application that showcases stories written in Javanese script along with their translations. The application utilizes semantic data based on RDF and is built using Next.js, React, Tailwind CSS, and GSAP for animations.",
       technologies: ["Next.js", "OWL"],
@@ -68,7 +79,7 @@ export const projects = {
       category: "College"
     },
     {
-      id: 8,
+      id: 9,
       title: "Job Recommendation System",
       description: "This is an Application for Job Recommendation Based on Field of Interest, GPA, and Preffered Work Environmet Using FIS & K-Means Clustering for Soft Computing Course",
       technologies: ["AI", "Python"],
@@ -76,7 +87,7 @@ export const projects = {
       category: "College"
     },
     {
-      id: 9,
+      id: 10,
       title: "Stress Level Prediction Using Random Forest Algorithm",
       description: "This application uses the Random Forest algorithm to predict stress levels based on user input and provides insight into mental well-being.",
       technologies: ["AI", "Python", "Decision Support System"],
@@ -84,7 +95,7 @@ export const projects = {
       category: "College"
     },
     {
-      id: 10,
+      id: 11,
       title: "Land Cover Analysis using K-Means",
       description: "This application implements K-Means Clustering for land cover image analysis. It is designed to visualize the clustering results of aerial images and evaluate them using the Silhouette Coefficient.",
       technologies: ["Jupyter", "Streamlit"],
@@ -92,7 +103,7 @@ export const projects = {
       category: "College"
     },
     {
-      id: 11,
+      id: 12,
       title: "Image Neural Transfer",
       description: "Comprehensive database design and management project involving normalization, query optimization, and database administrationproject that applies the principles of neural style transfer to blend the style of one image with the content of another. This technique leverages deep learning, particularly convolutional neural networks (CNNs), to create visually stunning artworks by combining the artistic style of one image (style image) with the content of another image (content image).",
       technologies: ["Jupyter"],
@@ -100,7 +111,7 @@ export const projects = {
       category: "College"
     },
     {
-      id: 12,
+      id: 13,
       title: "Kopi.in Website for Database System Course at Universitas Padjadjaran",
       description: "An e-commerce platform specializing in premium coffee beans source from Indonesia’s finest plantations.",
       technologies: ["PHP"],
