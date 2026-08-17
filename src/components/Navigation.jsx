@@ -1,80 +1,67 @@
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
+import { Menu, Moon, Sun, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { profile } from '@/data/profile';
+
+const links = [
+  { href: '/#about', label: 'About' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#work', label: 'Work' },
+];
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || 'light');
+  const [scrolled, setScrolled] = useState(() => window.scrollY > 20);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    setIsOpen(false);
-  };
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    localStorage.setItem('portfolio-theme', theme);
+  }, [theme]);
 
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'certifications', label: 'Certifications' },
-    { id: 'contact', label: 'Contact' }
-  ];
+  useEffect(() => {
+    const updateScrolled = () => setScrolled(window.scrollY > 20);
+    updateScrolled();
+    window.addEventListener('scroll', updateScrolled, { passive: true });
+    return () => window.removeEventListener('scroll', updateScrolled);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
-      <div className="container-max">
-        <div className="flex items-center justify-between h-16 px-6">
-          {/* Logo */}
-          <div className="font-bold text-x1 text-gray-900">
-            Rafa Agustant
-          </div>
+    <header className={`site-nav${scrolled ? ' is-scrolled' : ''}`}>
+      <Link to="/" className="brand" aria-label="Rafa Agustant, home">
+        <img className="brand-mark" src={profile.brandMark} alt="" width="34" height="34" />
+        <span className="brand-name">Rafa Agustant</span>
+      </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-gray-600 hover:text-blue-600 transition-colors duration-200 font-medium"
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
+      <button
+        className="menu-toggle"
+        type="button"
+        aria-expanded={open}
+        aria-controls="primary-navigation"
+        aria-label={open ? 'Close navigation' : 'Open navigation'}
+        onClick={() => setOpen((value) => !value)}
+      >
+        {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+      </button>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200">
-            <div className="px-6 py-4 space-y-3">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-gray-600 hover:text-blue-600 transition-colors duration-200 font-medium py-2"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-    </nav>
+      <nav id="primary-navigation" className={open ? 'nav-links is-open' : 'nav-links'} aria-label="Primary navigation">
+        {links.map((link) => (
+          <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
+            {link.label}
+          </a>
+        ))}
+      </nav>
+      <button
+        className="theme-toggle"
+        type="button"
+        aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+        onClick={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')}
+      >
+        {theme === 'dark' ? <Sun aria-hidden="true" /> : <Moon aria-hidden="true" />}
+      </button>
+    </header>
   );
 };
 
 export default Navigation;
-

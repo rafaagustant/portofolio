@@ -2,9 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/emoji-rafa.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rafa Agustant - Data Analyst | UI/UX Designer</title>
+    <meta name="description" content="Rafa Agustant is a Computer Science fresh graduate exploring product, UI/UX, data, and artificial intelligence through human-centered technical work." />
+    <meta name="theme-color" content="#f4f5f3" />
+    <script>
+      (() => {
+        const saved = localStorage.getItem('portfolio-theme');
+        const theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.documentElement.classList.add('motion-ready');
+        }
+      })();
+    </script>
+    <title>Rafa Agustant — Computer Science Fresh Graduate</title>
   </head>
   <body>
     <div id="root"></div>

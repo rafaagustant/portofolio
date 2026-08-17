@@ -1,66 +1,43 @@
-import { ChevronDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
+import { profile } from '@/data/profile';
 import profileImage from '@/assets/profile.jpg';
 
-const Hero = () => {
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
+const socialLinks = [
+  ['GitHub', 'https://github.com/rafaagustant'],
+  ['LinkedIn', 'https://www.linkedin.com/in/rafaagustant'],
+  ['Email', 'mailto:rafaagustant@gmail.com'],
+];
 
-  return (
-    <section id="home" className="min-h-screen hero-gradient flex items-center justify-center relative pt-16">
-      <div className="container-max section-padding text-center">
-        <div className="max-w-4xl mx-auto fade-in">
-          {/* Profile Image */}
-          <div className="mb-8">
-            <div className="w-40 h-40 md:w-80 md:h-80 rounded-full overflow-hidden mx-auto border-4 border-white shadow-lg">
-              <img
-                src={profileImage}
-                alt="Rafa Agustant"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Name */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900">
-            Rafa Agustant
-          </h1>
-
-          {/* Tagline */}
-          <p className="text-xl md:text-2xl lg:text-3xl mb-8 gradient-text font-medium">
-             Undergraduate Computer Science student at Universitas Padjadjaran | Aspiring Data Analyst & UI/UX Designer
-          </p>
-
-          {/* Description */}
-          <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-
-          </p>
-
-          {/* CTA Button */}
-          <Button
-            onClick={() => scrollToSection('projects')}
-            size="lg"
-            className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-8 py-4 text-lg font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            View My Work
-          </Button>
+const Hero = () => (
+  <section id="home" className="hero" aria-labelledby="hero-title">
+    <div className="hero-copy">
+      <h1 id="hero-title" className="hero-enter hero-enter-1">Hi, I’m Rafa Agustant.</h1>
+      <p className="hero-thesis hero-enter hero-enter-2">
+        I work across product, design, data, and intelligent systems, turning user needs and technical problems into clear digital solutions.
+      </p>
+      <p className="hero-location hero-enter hero-enter-3">{profile.location} · Open to early-career opportunities</p>
+      <div className="hero-actions">
+        <div className="hero-cta-group hero-enter hero-enter-4">
+          <a className="hero-primary-action" href="#work">
+            Explore my work <ArrowDownRight aria-hidden="true" />
+          </a>
+          <a className="text-link hero-cv-link" href={profile.cvHref} target="_blank" rel="noreferrer">
+            View CV <ArrowUpRight aria-hidden="true" />
+          </a>
         </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <ChevronDown 
-            className="w-8 h-8 text-gray-400 animate-bounce cursor-pointer hover:text-gray-600 transition-colors"
-            onClick={() => scrollToSection('about')}
-          />
+        <div className="hero-socials hero-enter hero-enter-5" aria-label="Social links">
+          {socialLinks.map(([label, href]) => (
+            <a key={label} href={href} target={label === 'Email' ? undefined : '_blank'} rel={label === 'Email' ? undefined : 'noreferrer'}>
+              {label}<ArrowUpRight aria-hidden="true" />
+            </a>
+          ))}
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+    <figure className="hero-portrait hero-portrait-enter">
+      <img src={profileImage} alt="Portrait of Rafa Agustant" width="800" height="800" fetchPriority="high" />
+    </figure>
+  </section>
+);
 
 export default Hero;
-

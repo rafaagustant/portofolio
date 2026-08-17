@@ -1,2 +1,15 @@
-.vercel
-node_modules
+node_modules/
+dist/
+coverage/
+.vite/
+.vercel/
+
+.env
+.env.*
+!.env.example
+
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db

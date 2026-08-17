@@ -1,67 +1,61 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Experience from '@/components/Experience';
-import Certifications from '@/components/Certifications';
 import Contact from '@/components/Contact';
+import CustomCursor from '@/components/CustomCursor';
+import { profile } from '@/data/profile';
+import { useRevealOnScroll } from '@/hooks/useRevealOnScroll';
 import './App.css';
 
-function App() {
+const usePageBehavior = () => {
+  const location = useLocation();
+
+  useRevealOnScroll(location.pathname);
+
   useEffect(() => {
-    // Add fade-in animation to elements when they come into view
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+    if (location.hash) {
+      requestAnimationFrame(() => document.querySelector(location.hash)?.scrollIntoView());
+    }
+  }, [location]);
+};
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
-
-    // Observe all fade-in elements
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach((el) => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-      observer.observe(el);
-    });
-
-    return () => observer.disconnect();
+const Home = () => {
+  usePageBehavior();
+  useEffect(() => {
+    if (!window.location.pathname.startsWith('/work/')) {
+      document.title = 'Rafa Agustant — Computer Science Fresh Graduate';
+    }
   }, []);
-
   return (
-    <div className="min-h-screen bg-white">
+    <>
       <Navigation />
       <main>
         <Hero />
         <About />
-        <Projects />
         <Experience />
-        <Certifications />
+        <Projects />
         <Contact />
       </main>
-      
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
-        <div className="container-max px-6">
-          <div className="text-center">
-            <p className="text-gray-400">
-              © 2025 Rafa Agustant. All rights reserved.
-            </p>
-          </div>
+      <footer className="site-footer reveal">
+        <div className="footer-identity">
+          <img src={profile.brandMark} alt="" width="28" height="28" />
+          <p>© {new Date().getFullYear()} Rafa Agustant</p>
         </div>
+        <p>{profile.location}</p>
       </footer>
-    </div>
+    </>
   );
-}
+};
+
+const App = () => (
+  <div className="site-shell">
+    <CustomCursor />
+    <Home />
+  </div>
+);
 
 export default App;
-
