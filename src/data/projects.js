@@ -8,10 +8,12 @@ import eksplorimbaMockup from '@/assets/projects/eksplorimba.png';
 import becycleMockup from '@/assets/projects/becycle.png';
 import nutrikidzMockup from '@/assets/projects/nutrikidz.png';
 import hanacarakaMockup from '@/assets/projects/hanacaraka.png';
+import playerReplacementMockup from '@/assets/projects/player-replacement.png';
 
 const link = (type, href) => ({
   type,
-  label: type === 'prototype' ? 'View Prototype' : type === 'repository' ? 'View Repository' : 'View Live Site',
+  label: type === 'demo' ? 'Live Demo' : type === 'case-study' ? 'Case Study' : type === 'prototype' ? 'View Prototype' : type === 'repository' ? 'View Repository' : 'View Live Site',
+  variant: type === 'demo' ? 'primary' : type === 'case-study' ? 'secondary' : undefined,
   href,
 });
 
@@ -93,6 +95,38 @@ export const projects = [
     mockup: thesisResults,
     accent: '#087d74',
     links: [link('repository', 'https://github.com/rafaagustant/person-reidentification')],
+  },
+  {
+    slug: 'player-replacement',
+    title: 'Player Replacement',
+    discipline: 'Football Analytics / Data Product',
+    categories: ['Data', 'Web'],
+    year: '2026',
+    summary: 'A Bundesliga player-profile comparison tool that finds statistically similar players and shows where their profiles align or differ.',
+    description: 'A Bundesliga player-profile comparison tool for exploring how statistical playing profiles align or differ.',
+    whatItDoes: 'Find players with a similar statistical playing profile.',
+    data: 'Bundesliga 2023/24 IMPECT Open Data.',
+    method: 'Player statistics were audited, grouped by playing role, normalized for exposure, scaled by comparison group, and compared using Euclidean distance.',
+    product: 'Users can search a player, browse by club, inspect similar profiles, and compare where two players are closest or most different.',
+    detailSections: [
+      ['What it does', 'whatItDoes'],
+      ['Data', 'data'],
+      ['Method', 'method'],
+      ['Product', 'product'],
+    ],
+    contribution: 'Data analysis, product design, full-stack development',
+    workedOn: [
+      'Player and club search flows',
+      'Role-aware similar-player comparisons',
+      'Closest and largest profile differences',
+    ],
+    technologies: ['Python', 'Pandas', 'scikit-learn', 'FastAPI', 'React', 'Vite'],
+    mockup: playerReplacementMockup,
+    accent: '#7f1d1d',
+    links: [
+      link('demo', 'https://player-replacement.vercel.app'),
+      link('case-study', '/case-studies/player-replacement-case-study.pdf'),
+    ],
   },
   {
     slug: 'adidas-data-warehouse',

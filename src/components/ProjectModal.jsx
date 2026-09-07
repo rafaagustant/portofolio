@@ -90,11 +90,11 @@ const ProjectModal = ({ project, onClose, pageScrollY }) => {
             <div><dt>My role</dt><dd>{project.contribution}</dd></div>
             <div><dt>Tools</dt><dd>{project.technologies.join(' · ')}</dd></div>
           </dl>
-          {project.links.length > 0 && <div className="modal-actions">{project.links.map((link) => <a href={link.href} target="_blank" rel="noreferrer" key={link.href}>{link.label}<ArrowUpRight aria-hidden="true" /></a>)}</div>}
+          {project.links.length > 0 && <div className="modal-actions">{project.links.map((link) => <a className={link.variant ? `is-${link.variant}` : undefined} href={link.href} target="_blank" rel="noopener noreferrer" key={link.href}>{link.label}<ArrowUpRight aria-hidden="true" /></a>)}</div>}
         </header>
         <figure className="modal-visual" style={{ '--project-accent': project.accent }}><img src={project.mockup} alt={`${project.title} primary project mockup`} /></figure>
         <div className="modal-story">
-          {narrativeSections.map(([label, field]) => project[field] && <section key={field}><h3>{label}</h3><p>{project[field]}</p></section>)}
+          {(project.detailSections || narrativeSections).map(([label, field]) => project[field] && <section key={field}><h3>{label}</h3><p>{project[field]}</p></section>)}
           <section><h3>What I worked on</h3><ul>{project.workedOn.map((item) => <li key={item}>{item}</li>)}</ul></section>
           {project.keyFeatures?.length > 0 && <section><h3>Key features</h3><ul>{project.keyFeatures.map((item) => <li key={item}>{item}</li>)}</ul></section>}
         </div>
