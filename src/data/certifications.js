@@ -1,5 +1,12 @@
 export const certifications = [
   {
+    id: 6,
+    title: 'SQL (Intermediate)',
+    issuer: 'HackerRank',
+    date: '2026',
+    credentialUrl: 'https://www.hackerrank.com/certificates/1d4fdc73e293',
+  },
+  {
     id: 1,
     title: 'Data Analyst Advance',
     issuer: 'ITBOX Academy',

@@ -8,13 +8,15 @@ const Certifications = () => (
       <p>Focused credentials supporting my data and web foundations.</p>
     </div>
     <div className="credentials-list">
-      {certifications.slice(0, 5).map((certification, index) => {
+      {certifications.map((certification, index) => {
         const Row = certification.credentialUrl ? 'a' : 'div';
         return (
-        <Row className="credential-row reveal" style={{ '--reveal-delay': `${Math.min(index, 4) * 45}ms` }} key={certification.id} href={certification.credentialUrl || undefined} target={certification.credentialUrl ? '_blank' : undefined} rel={certification.credentialUrl ? 'noreferrer' : undefined}>
+        <Row className="credential-row reveal" style={{ '--reveal-delay': `${Math.min(index, 4) * 45}ms` }} key={certification.id} href={certification.credentialUrl || undefined} target={certification.credentialUrl ? '_blank' : undefined} rel={certification.credentialUrl ? 'noopener noreferrer' : undefined}>
           <span>{certification.title}</span>
           <span>{certification.issuer} · {certification.date}</span>
-          {certification.credentialUrl ? <ArrowUpRight aria-hidden="true" /> : <span className="credential-unavailable">Link unavailable</span>}
+          {certification.credentialUrl ? (
+            <span className="credential-action">View Certificate <ArrowUpRight aria-hidden="true" /></span>
+          ) : <span className="credential-unavailable">Link unavailable</span>}
         </Row>
       )})}
     </div>
